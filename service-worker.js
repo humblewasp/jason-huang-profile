@@ -1,4 +1,4 @@
-const CACHE_NAME = "jason-huang-profile-v1";
+const CACHE_NAME = "jason-huang-books-v7";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.add(self.registration.scope)));
@@ -26,7 +26,8 @@ self.addEventListener("fetch", (event) => {
         })
         .catch(() => cached);
 
-      return cached ?? fresh;
+      // Refresh pages immediately after a published update while retaining offline fallback.
+      return event.request.mode === "navigate" ? fresh : (cached ?? fresh);
     }),
   );
 });
