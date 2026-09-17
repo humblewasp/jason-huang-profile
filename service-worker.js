@@ -1,4 +1,4 @@
-const CACHE_NAME = "jason-huang-books-v7";
+const CACHE_NAME = "jason-huang-books-v8";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.add(self.registration.scope)));
