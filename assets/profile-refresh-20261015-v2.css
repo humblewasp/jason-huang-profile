@@ -1,0 +1,49 @@
+/* Preserve the existing palette and book interactions; surface resume evidence. */
+.site-header { height: 76px; }
+.hero-copy { display: flex; flex-direction: column; align-items: flex-start; }
+.hero-lead { margin-top: 24px; }
+.hero-links { order: 1; }
+.intro-contact { order: 2; margin-top: 22px; }
+.hero-description { max-width: 650px; }
+.section-heading h2 { margin-top: 0; }
+
+.highlights { padding-top: 32px; padding-bottom: 52px; border-top: 1px solid var(--line); }
+.highlights h2 { font-size: 30px; font-weight: 550; letter-spacing: -.025em; line-height: 1.4; }
+.highlights-intro { color: var(--muted); font-size: 15px; margin-top: 10px; }
+.highlights-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 28px; }
+.highlight-case { min-width: 0; padding: 28px; background: var(--panel); display: flex; flex-direction: column; align-items: flex-start; }
+.highlight-organization { color: var(--mint); font-size: 13px; font-weight: 550; }
+.highlight-case h3 { font-size: 22px; font-weight: 550; line-height: 1.5; margin-top: 8px; }
+.highlight-description { color: var(--muted); font-size: 14px; line-height: 1.9; margin-top: 12px; max-width: 55ch; }
+.highlight-metrics { display: flex; flex-wrap: wrap; gap: 22px 28px; margin: auto 0 10px; padding-top: 28px; }
+.highlight-metrics > div { display: flex; flex-direction: column-reverse; }
+.highlight-metrics dt { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 4px; }
+.highlight-metrics dd { font-size: 29px; font-weight: 550; letter-spacing: -.035em; line-height: 1.2; margin: 0; font-variant-numeric: tabular-nums; }
+.highlight-link { background: transparent; border: 0; padding: 10px 0; display: inline-flex; align-items: center; gap: 18px; font-size: 13px; font-weight: 500; color: var(--mint); text-align: left; }
+.highlight-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+.highlight-link:active { transform: translateY(1px); }
+.highlight-link > span { font-size: 20px; line-height: 1; transition: transform .2s ease; }
+.highlight-link:hover > span { transform: translate(2px, -2px); }
+
+@media (width <= 1100px) {
+  .highlights-grid { gap: 18px; }
+  .highlight-case { padding: 23px; }
+  .highlight-case h3 { font-size: 20px; }
+  .highlight-metrics { gap: 24px; }
+}
+@media (width <= 767px) {
+  .site-header { height: 72px; }
+  .hero { padding-bottom: 30px; }
+  .hero-description { font-size: 15px; }
+  .intro-contact { gap: 8px 18px; margin-top: 20px; }
+  .highlights { padding-top: 28px; padding-bottom: 32px; }
+  .highlights h2 { font-size: 26px; }
+  .highlights-intro { font-size: 14px; }
+  .highlights-grid { grid-template-columns: 1fr; gap: 18px; margin-top: 22px; }
+  .highlight-case { padding: 25px; }
+  .highlight-case h3 { font-size: 21px; }
+  .highlight-metrics dd { font-size: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .highlight-link, .highlight-link > span { transition: none; transform: none; }
+}

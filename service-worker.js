@@ -1,4 +1,4 @@
-const CACHE_NAME = "jason-huang-books-v8";
+const CACHE_NAME = "jason-huang-books-v10";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.add(self.registration.scope)));
@@ -8,7 +8,7 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))),
+      Promise.all(keys.filter((key) => key.startsWith("jason-huang-books-") && key !== CACHE_NAME).map((key) => caches.delete(key))),
     ),
   );
   self.clients.claim();
